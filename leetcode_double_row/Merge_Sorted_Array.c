@@ -11,7 +11,7 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
 {
     if(n!=0)
     {
-    int * nums = (int *)malloc(sizeof(int)*m);
+    int * nums = (int *)malloc(sizeof(int)*m);//未考虑到要分配内存,代码敏感度不够
     for(int i = 0;i < m;i++)
     {
         nums[i] = nums1[i];
@@ -20,7 +20,7 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n)
     int b= 0;
     for(int i = 0;i<m+n;i++)
     {
-        if(a < m && (b>n-1 || nums[a] < nums[b]))
+        if(a < m && (b>n-1 || nums[a] < nums[b])) 
         {
             nums1[i] = nums[a++]; 
             continue;
