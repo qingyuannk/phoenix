@@ -12,3 +12,22 @@ Example1:
     Not 7-1 = 6, as selling price needs to be larger than buying price.
 
 """
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        if(len(prices)==0):
+            return 0
+        L = 0
+        min_prices = prices[0]
+        max_profit = 0
+        while(L < len(prices)-1):
+            L = L+1
+            if(min_prices>prices[L]):
+                min_prices = prices[L]
+            if(max_profit < prices[L] -min_prices):
+                max_profit = prices[L] -min_prices
+
+        return max_profit
